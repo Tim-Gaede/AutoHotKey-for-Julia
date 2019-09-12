@@ -1,4 +1,6 @@
 ; AutoHotKey script for Julia Code
+; Timothy Gaede 2019-09-12
+
 
 Esc::ExitApp  ; [Esc] EXIT script
 
@@ -90,7 +92,7 @@ Esc::ExitApp  ; [Esc] EXIT script
 
 
 
-;------------------- Numpad combinations --------------------- 
+;------------------- Numpad combinations ---------------------
 ^Numpad0::Send {U+2080}    ; [Ctrl][0] -> subscript 0
 ^Numpad1::Send {U+2081}    ; [Ctrl][1] -> subscript 1
 ^Numpad2::Send {U+2082}    ; [Ctrl][2] -> subscript 2
@@ -133,11 +135,11 @@ Esc::ExitApp  ; [Esc] EXIT script
 
 
 ;------------------------------------------- Structure combinations -----------------------------------------------
-!/::Send if{Space}{Enter}else{Space}{Enter}end{Space}{Up 2}               ; [Alt][?] -> if;else;end
+!/::Send if{Space}{Enter}else{Space}{Enter 2}end{Space}{Up}{Tab}{Up 2}    ; [Alt][?] -> if;else;end
 
 !Space::Send function{Space}(){Enter}end{Space}{Up}{Right 5}              ; [Alt][spacebar] -> function ();end
             
-!M::Send function{Space}main(){Enter 2}end{Space}{Enter}main(){Up 2}{Tab} ; [Alt][M] -> function main();;end;main()   
+!M::Send function{Space}main(){Enter 2}end{Space}{Enter}main(){Up 2}{Tab} ; [Alt][M] -> function main();;end;main()
 ;------------------------------------------------------------------------------------------------------------------
 
 
@@ -147,7 +149,7 @@ Esc::ExitApp  ; [Esc] EXIT script
 
 ;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ;                                                  Capslock combinations
-                                                  
+
 #If GetKeyState("CapsLock","T")
 
 
