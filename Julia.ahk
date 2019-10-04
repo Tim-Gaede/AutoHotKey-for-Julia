@@ -209,8 +209,7 @@ Esc::ExitApp  ; [Esc] kill script
 
  
 ; → ᐟ substitute superscript slash (Canadian Syllabics Final Acute)
-+#/::Send {U+141F} ; [Win][/]
- 
++#/::Send {U+141F} ; [Shift][Win][/]
 
 
 
