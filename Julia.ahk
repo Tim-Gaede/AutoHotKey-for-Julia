@@ -25,36 +25,6 @@ Esc::ExitApp  ; [Esc] kill script
 ;------------------------------------------------------------------
 
 
-;============== Delete the semicolon left of these commands to "uncomment" ====================
-;               and get the top row of number keys automatically shifted.
-;               Numbers would still be available via the number pad. 
-
-;1::Send{!}
-;2::Send{@}
-;3::Send{#}
-;4::Send{$}
-;5::Send{%}
-;6::Send{^}
-;7::Send{&}
-;8::Send{*}
-;9::Send{(}
-;0::Send{)}
- 
-;+1::Send{1}
-;+2::Send{2}
-;+3::Send{3}
-;+4::Send{4}
-;+5::Send{5}
-;+6::Send{6}
-;+7::Send{7}
-;+8::Send{8}
-;+9::Send{9}
-;+0::Send{0}
-
-;==============================================================================================
-
-
-
 
 ^-::Send {U+2260} ; [Ctrl][-] → ≠ (not equal)
 
