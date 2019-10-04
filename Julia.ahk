@@ -284,7 +284,7 @@ return
 !K::Send {U+03BA} ; [Alt][K] → κ (kappa) 
 !L::Send {U+039B} ; [Alt][V] → Λ (LAMBDA)
 !N::Send {U+03BD} ; [Alt][N] → ν (nu)
-
+!O::Send {U+00B0} ; [Alt][O] → ° (degrees)
 !P::Send {U+03C8} ; [Alt][P] → ψ (psi)
 
 !R::Send {U+2202} ; [Alt][R] → ∂ (paRtial)
