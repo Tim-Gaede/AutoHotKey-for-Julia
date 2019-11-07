@@ -369,7 +369,7 @@ return
 
 ; println("clipboard = ", clipboard)
 ^!P::Send println{(}{"}%clipboard%{Space}{=}{Space}{"}{,}{Space}%clipboard%{)}
-
+^RButton::Send println{(}{"}%clipboard%{Space}{=}{Space}{"}{,}{Space}%clipboard%{)}
 
 
 ;[Ctrl][Alt][M] → function main();;end;main()           
