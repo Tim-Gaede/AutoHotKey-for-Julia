@@ -28,7 +28,7 @@ Esc::ExitApp  ; [Esc] kill script
 
 
 ^-::Send {U+2260} ; [Ctrl][-] → ≠ (not equal)
-^=::Send {=}{>}   ; [Ctrl][=] → => 
+^=::Send {Space}{=}{>}{Space}   ; [Ctrl][=] →  => 
 
 
 ^,::Send {U+2264} ; [Ctrl][<] → ≤ (less than or equal)
