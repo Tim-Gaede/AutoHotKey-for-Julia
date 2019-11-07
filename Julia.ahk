@@ -356,7 +356,7 @@ return
    
 
 ;[Ctrl][Alt][F] → function ();end
-^!F::Send {#}{- 79}{Enter}function{Space}(){Enter}end{Enter}{#}{- 79}{Enter}{Up 3}{Right 9}
+^!F::Send {Enter}{Up}{#}{- 79}{Enter}function{Space}(){Enter}end{Enter}{#}{- 79}{Enter}{Up 3}{Right 9}
 
 
 ;[Ctrl][Alt][I] → if;else;end
@@ -373,7 +373,7 @@ return
 
 
 ;[Ctrl][Alt][M] → function main();;end;main()           
-^!M::Send {#}{~ 79}{Enter}function{Space}main(){Enter 2}end{Space}{Enter}{#}{~ 79}{Enter}main(){Up 3}{Tab}println{(}{"}{\}n{"}{^}2{,}{Space}{"}{-}{"}{^}60{Space}{,}{"}{\}n{"}{^}3{)}{Enter 2}
+^!M::Send {Enter}{Up}{#}{~ 79}{Enter}function{Space}main(){Enter 2}end{Space}{Enter}{#}{~ 79}{Enter}main(){Up 3}{Tab}println{(}{"}{\}n{"}{^}2{,}{Space}{"}{-}{"}{^}60{,}{Space}{"}{\}n{"}{^}3{)}{Enter 2}
 
  
 } 
