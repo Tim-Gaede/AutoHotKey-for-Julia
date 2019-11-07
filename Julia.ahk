@@ -363,16 +363,18 @@ return
 ^!I::Send if{Space}{Enter}else{Space}{Enter 2}end{Space}{Up}{Tab}{Up 2} 
 
 
-;[Ctrl][Alt][M] → function main();;end;main()           
-^!M::Send {#}{~ 79}{Enter}function{Space}main(){Enter 2}end{Space}{Enter}{#}{~ 79}{Enter}main(){Up 3}{Tab}
-
-
 ; [Ctrl][Alt][W] → while;end
 ^!W::Send while{Space}{Enter}end{Space}{Up}{Right 2} 
 
 
 ; println("clipboard = ", clipboard)
 ^!P::Send println{(}{"}%clipboard%{Space}{=}{Space}{"}{,}{Space}%clipboard%{)}
+
+
+
+;[Ctrl][Alt][M] → function main();;end;main()           
+^!M::Send {#}{~ 79}{Enter}function{Space}main(){Enter 2}end{Space}{Enter}{#}{~ 79}{Enter}main(){Up 3}{Tab}println{(}{"}{\}n{"}{^}2{,}{Space}{"}{-}{"}{^}60{Space}{,}{"}{\}n{"}{^}3{)}{Enter 2}
+
  
 } 
 
