@@ -25,10 +25,13 @@ Esc::ExitApp  ; [Esc] kill script
 ;------------------------------------------------------------------
 
  
++LButton::Send {#}{=}{Enter} ; [Shift][Lmouse] → #=
++RButton::Send {Enter}{=}{#}     ; [Shift][Lmouse] → =#
 
 
 ^-::Send {U+2260} ; [Ctrl][-] → ≠ (not equal)
-^=::Send {Space}{=}{>}{Space}   ; [Ctrl][=] →  => 
+
+^=::Send {Space}{=}{>}{Space}   ; [Ctrl][=] →  =>
 
 
 ^,::Send {U+2264} ; [Ctrl][<] → ≤ (less than or equal)
@@ -227,11 +230,26 @@ Esc::ExitApp  ; [Esc] kill script
 ^Numpad7::Send {U+2087}    ; [Ctrl][7] → subscript 7
 ^Numpad8::Send {U+2088}    ; [Ctrl][8] → subscript 8
 ^Numpad9::Send {U+2089}    ; [Ctrl][9] → subscript 9
+
 ^NumpadAdd::Send {U+208A}  ; [Ctrl][+] → subscript +
 ^NumpadSub::Send {U+208B}  ; [Ctrl][-] → subscript -
 ^NumpadMult::Send {U+00D7} ; [Ctrl][*] → × (times)
 ^NumpadDiv::Send {U+00F7}  ; [Ctrl][/] → ÷ (integer division)
 ^NumpadDot::Send {U+22C5}  ; [Ctrl][.] → ⋅ (cdot)
+
+
+;--------------------THESE DO NOT WORK------------------------
++^Numpad0::Send {U+2070}    ; [Shift][Ctrl][0] → superscript 0
++^Numpad1::Send {U+00B9}    ; [Shift][Ctrl][1] → superscript 1
++^Numpad2::Send {U+00B2}    ; [Shift][Ctrl][2] → superscript 2
++^Numpad3::Send {U+00B3}    ; [Shift][Ctrl][3] → superscript 3
++^Numpad4::Send {U+2074}    ; [Shift][Ctrl][4] → superscript 4
++^Numpad5::Send {U+2075}    ; [Shift][Ctrl][5] → superscript 5
++^Numpad6::Send {U+2076}    ; [Shift][Ctrl][6] → superscript 6
++^Numpad7::Send {U+2077}    ; [Shift][Ctrl][7] → superscript 7
++^Numpad8::Send {U+2078}    ; [Shift][Ctrl][8] → superscript 8
++^Numpad9::Send {U+2079}    ; [Shift][Ctrl][9] → superscript 9
+; ------------------------------------------------------------ 
 
 +^NumpadAdd::Send {U+207A} ; [Shift][Ctrl][+] → superscript +
 +^NumpadSub::Send {U+207B} ; [Shift][Ctrl][-] → superscript -
@@ -253,6 +271,21 @@ Esc::ExitApp  ; [Esc] kill script
 #NumpadMult::Send {U+00D7} ; [Win][*] → × (times)
 #NumpadDiv::Send {U+00F7}  ; [Win][/] → ÷ (integer division)
 #NumpadDot::Send {U+22C5}  ; [Win][.] → ⋅ (cdot)
+
+
+;--------------------THESE DO NOT WORK-----------------------
++#Numpad0::Send {U+2070}    ; [Shift][Win][0] → superscript 0
++#Numpad1::Send {U+00B9}    ; [Shift][Win][1] → superscript 1
++#Numpad2::Send {U+00B2}    ; [Shift][Win][2] → superscript 2
++#Numpad3::Send {U+00B3}    ; [Shift][Win][3] → superscript 3
++#Numpad4::Send {U+2074}    ; [Shift][Win][4] → superscript 4
++#Numpad5::Send {U+2075}    ; [Shift][Win][5] → superscript 5
++#Numpad6::Send {U+2076}    ; [Shift][Win][6] → superscript 6
++#Numpad7::Send {U+2077}    ; [Shift][Win][7] → superscript 7
++#Numpad8::Send {U+2078}    ; [Shift][Win][8] → superscript 8
++#Numpad9::Send {U+2079}    ; [Shift][Win][9] → superscript 9 
+;------------------------------------------------------------
+
 
 +#NumpadAdd::Send {U+207A} ; [Shift][Win][+] → superscript +
 +#NumpadSub::Send {U+207B} ; [Shift][Win][-] → superscript -
@@ -367,13 +400,18 @@ return
 ^!W::Send while{Space}{Enter}end{Space}{Up}{Right 2} 
 
 
-; println("clipboard = ", clipboard)
-^!P::Send println{(}{"}%clipboard%{Space}{=}{Space}{"}{,}{Space}%clipboard%{)}
-^RButton::Send println{(}{"}%clipboard%{Space}{=}{Space}{"}{,}{Space}%clipboard%{)}
+; [Ctrl][Rmouse] → println("*clipboard* → ", *clipboard*) 
+^RButton::Send {Sleep 5}println{(}{"}%clipboard%{Space}{U+2192}{Space}{"}{,}{Space}%clipboard%{)}
+
+; [Ctrl][Lmouse] → println("\n"*) 
+^LButton::Send {Sleep 10}println{(}{"}{\}n{"}{)}
+ 
+; [Shift][Ctrl][Rmouse] → *println() for each item in clipboard (must be iterable, of course)
++^RButton::Send println{(}{"}items{Space}in{Space}%clipboard%{:}{"}{)}{Enter}{Sleep 5}for{Space}item{Space}in{Space}%clipboard%{Enter}{Sleep 10}println{(}item{)}{Enter}{Sleep 10}end{Enter} 
 
 
 ;[Ctrl][Alt][M] → function main();;end;main()           
-^!M::Send {Enter}{Up}{#}{~ 79}{Enter}function{Space}main(){Enter 2}end{Space}{Enter}{#}{~ 79}{Enter}main(){Up 3}{Tab}println{(}{"}{\}n{"}{^}2{,}{Space}{"}{-}{"}{^}60{,}{Space}{"}{\}n{"}{^}3{)}{Enter 2}
+^!M::Send {Enter}{Up}{#}{~ 79}{Enter}function{Space}main(){Sleep 10}{Enter 2}end{Space}{Enter}{#}{~ 79}{Enter}main(){Up 3}{Tab}{Sleep 10}println{(}{"}{\}n{"}{^}2{,}{Space}{"}{-}{"}{^}60{,}{Space}{"}{\}n{"}{^}3{)}{Enter 2}
 
  
 } 
