@@ -26,7 +26,7 @@ Esc::ExitApp  ; [Esc] kill script
 
  
 +LButton::Send {#}{=}{Enter} ; [Shift][Lmouse] → #=
-+RButton::Send {Enter}{=}{#}     ; [Shift][Lmouse] → =#
++RButton::Send {Enter}{=}{#} ; [Shift][Lmouse] → =#
 
 
 ^-::Send {U+2260} ; [Ctrl][-] → ≠ (not equal)
