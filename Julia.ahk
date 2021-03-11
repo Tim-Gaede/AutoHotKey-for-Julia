@@ -5,7 +5,7 @@
 Esc::ExitApp  ; [Esc] kill script
 
 
-`::suspend ; [~] tilde to toggle awake/asleep
+^`::suspend ; [Ctrl][~] to toggle awake/asleep (think: "tilde is toggle")
 {
 
 +Space::Send _     ; [Shift][spacebar] → underscore
