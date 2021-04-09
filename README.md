@@ -1,6 +1,6 @@
 [Esc] kills script
 
- [~]  toggles awake/asleep
+ [Ctrl][~]  toggles awake/asleep
 
 
 
